@@ -94,6 +94,7 @@ fi
 echo " $PACKAGES"
 
 TMPDIR=$CMSSW_BASE/tmp/$SCRAM_ARCH
+mkdir -p $TMPDIR
 
 cd $CMSSW_BASE/src
 
