@@ -142,8 +142,8 @@ do
       then
         HEADERS=$(sed -n 's|#include *"\([^"]*\)"|\1|p' $LINKDEF | tr '\n' ' ')
 
-        echo rootcling -f $TMPDIR/$OUTPUT.cc $INCDIRS $HEADERS $LINKDEF
-        rootcling -f $TMPDIR/$OUTPUT.cc $INCDIRS $HEADERS $LINKDEF
+        echo rootcling -f $TMPDIR/$OUTPUT.cc $INCDIRS -Wno-inconsistent-missing-override $HEADERS $LINKDEF
+        rootcling -f $TMPDIR/$OUTPUT.cc $INCDIRS -Wno-inconsistent-missing-override $HEADERS $LINKDEF
 
         [ $? -eq 0 ] || exit 1
   
